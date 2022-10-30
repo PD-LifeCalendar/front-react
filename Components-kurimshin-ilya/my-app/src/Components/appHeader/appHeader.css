@@ -1,0 +1,61 @@
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+a:hover {
+    transition: 0.5s;
+    color: #C28327;  
+}
+
+.logo {
+    height: 60px;
+    width: 60px;
+    margin-top: 30px;
+}
+
+.naw_p-s {
+    font-family: 'Nunito';
+    font-weight: 300;
+    font-size: 20px;
+    color: #0A0A0A;
+    margin-top: 48px;
+    display: inline-flex;
+}
+
+.naw_p {
+    margin-left: 40px;
+}
+
+.naw_btn {
+    float: right;
+    padding-right: 30%;
+}
+
+.naw_p-btn {
+    
+}
+
+.ikon-btn {
+    height: 30px;
+}
+
+.theme-language {
+    height: 42px;
+    width: 80px;
+}
+
+/* .theme-language:hover {
+    height: 60px;
+    transition: 0.6s;
+} */
+
+
+.t-l {
+    display: flex;
+    margin-top: 42px;
+}
+
+.language {
+    margin-left: 20px;
+}

@@ -1,0 +1,136 @@
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+a:hover {
+    transition: 0.5s;
+    color: #C28327;  
+}
+
+.title {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 70px;
+    margin-top: 115px;
+    color: #0A0A0A;
+}
+
+.icon {
+    width: 49px
+}
+
+.icon_name {
+    margin-top: 75px;
+    height: 25px;
+}
+
+.icon_input {
+    margin-top: 29px;
+    height: 25px;
+}
+
+.titl_input {
+    margin-top: 30px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    color: #0A0A0A;
+    padding-left: 0;
+}
+
+.titl_name {
+    margin-top: 75px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    color: #0A0A0A;
+    padding-left: 0;
+}
+
+.form-control-username {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 16px;
+    width: 400px;
+    /* height: 65px; */
+    border: 3px solid #FFE0B2;
+    border-radius: 8px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 1;
+}
+
+.btn {
+    display: block;
+    padding: 8px 28px;
+    width: 320px;
+    height: 60px;
+    background: #FFE0B2;
+    border-radius: 8px;
+
+    margin-top: 30px;
+}
+
+.btn_text {
+    
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 49px;
+    text-align: center;
+    padding-top: 0;
+    color: #424242;
+}
+
+.illustration {
+    background: url('./img/Illustation.svg') no-repeat ;
+    background-size: 100% 100%;
+    width: 55%;
+    height: 950px;
+    position: absolute;
+    left: 500px;
+    top: 300px;
+}
+
+.footer {
+    margin-top: 829px;
+}
+
+.logo_footer {
+    /* position: absolute; */
+    width: 110px;
+    /* margin-top: 829px; */
+    margin-left: 32%;
+}
+
+.hrf1 {
+    text-align: center; 
+    font-size: 19px;
+    font-weight: 400;
+    font-family: 'Nunito';
+    font-style: normal;
+    line-height: 33px;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.polytech {
+    margin-top: 95px;
+    text-align: center;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 33px;
+    color: #9E9E9E;
+}
+
