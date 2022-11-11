@@ -63,3 +63,9 @@ button:hover {
     left: -2px;
     z-index: 2;
 }
+
+@media (max-width: 1100px) {
+    button {
+        background: var(--buttonBgColor);
+    }
+}
