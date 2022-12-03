@@ -1,5 +1,5 @@
 import cn from "classnames";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useContext, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Form } from "../../Form/Form";
@@ -12,21 +12,45 @@ import { ReactComponent as DescIcon } from "./assets/desc.svg";
 import { ReactComponent as MiddlewareIcon } from "./assets/middleware.svg";
 import { ReactComponent as PlusIcon } from "./assets/plus.svg";
 import { ReactComponent as Illustration } from "./assets/illustration.svg";
+import { ReactComponent as IllustrationDark } from "./assets/illustration-dark.svg";
+import { ReactComponent as NameDarkIcon } from "./assets/name-dark.svg";
+import { ReactComponent as AgeDarkIcon } from "./assets/calendar-dark.svg";
+import { ReactComponent as CategoryDarkIcon } from "./assets/category-dark.svg";
+import { ReactComponent as DescDarkIcon } from "./assets/desc-dark.svg";
+import { ReactComponent as MiddlewareDarkIcon } from "./assets/middleware-dark.svg";
+import { ReactComponent as PlusDarkIcon } from "./assets/plus-dark.svg";
+import { ReactComponent as CrossDarkIcon } from "./assets/cross-dark.svg";
 
 import styles from "./Popup.module.css";
 import { declOfNum } from "./helper/declToNum";
 import Button from "../../atomic/Button/Button";
+import { ThemeContext } from "./../../../pages/context";
 
 export const Popup = ({ className, setVisible, ...props }) => {
   const { t } = useTranslation();
+  const { theme } = useContext(ThemeContext);
+
+  const getIllustration = useCallback(() => {
+    return theme === "light" ? (
+      <Illustration className={styles.illustration} />
+    ) : (
+      <IllustrationDark className={styles.illustration} />
+    );
+  }, [theme]);
 
   useEffect(() => {
-    document.querySelector('body').style.overflow = 'hidden';
+    setIllustration(getIllustration());
+  }, [theme, getIllustration]);
+
+  useEffect(() => {
+    document.querySelector("body").style.overflow = "hidden";
 
     return () => {
-      document.querySelector('body').style.overflow = 'visible';
-    }
+      document.querySelector("body").style.overflow = "visible";
+    };
   }, []);
+
+  const [illustration, setIllustration] = useState(getIllustration());
 
   const [middlewares, setMiddlewares] = useState(() => {
     const middlewares = [];
@@ -79,14 +103,34 @@ export const Popup = ({ className, setVisible, ...props }) => {
     if (e.target === e.currentTarget) {
       setVisible(false);
     }
-  }
+  };
 
   return (
-    <Modal onClick={(e) => clickOutside(e)} className={cn(styles.background, className)} {...props}>
+    <Modal
+      onClick={(e) => clickOutside(e)}
+      className={cn(styles.background, className)}
+      {...props}
+    >
       <section className={styles.popup}>
         <div className={styles.header}>
-          <h2 className={styles.title}>{t("popup.title")}:</h2>
-          <CrossIcon className={styles.crossIcon} onClick={() => setVisible(false)} />
+          <h2
+            className={cn(styles.title, {
+              [styles.title_dark]: theme === "dark",
+            })}
+          >
+            {t("popup.title")}:
+          </h2>
+          {theme === "light" ? (
+            <CrossIcon
+              className={styles.crossIcon}
+              onClick={() => setVisible(false)}
+            />
+          ) : (
+            <CrossDarkIcon
+              className={styles.crossIcon}
+              onClick={() => setVisible(false)}
+            />
+          )}
         </div>
         <div className={styles.content}>
           <Form className={styles.form} onSubmit={onSubmit}>
@@ -95,23 +139,35 @@ export const Popup = ({ className, setVisible, ...props }) => {
               variant="secondary"
               color="orange"
               label={
-                <span className={styles.label}>
-                  <NameIcon />
+                <span
+                  className={cn(styles.label, {
+                    [styles.label_dark]: theme === "dark",
+                  })}
+                >
+                  {theme === "light" ? <NameIcon /> : <NameDarkIcon />}
                   {t("popup.labels.name")}
                 </span>
               }
               name="name"
               placeholder={t("popup.placeholders.name")}
-              className={styles.input}
+              className={cn(styles.input, {
+                [styles.input_dark]: theme === "dark"
+              })}
             />
             <Form.Option
               label={
-                <span className={styles.label}>
-                  <AgeIcon />
+                <span
+                  className={cn(styles.label, {
+                    [styles.label_dark]: theme === "dark",
+                  })}
+                >
+                  {theme === "light" ? <AgeIcon /> : <AgeDarkIcon />}
                   {t("popup.labels.year")}
                 </span>
               }
-              className={styles.input}
+              className={cn(styles.input, {
+                [styles.input_dark]: theme === "dark"
+              })}
               name="age"
               labelPosition="top"
               variant="secondary"
@@ -119,12 +175,18 @@ export const Popup = ({ className, setVisible, ...props }) => {
             />
             <Form.Option
               label={
-                <span className={styles.label}>
-                  <CategoryIcon />
+                <span
+                  className={cn(styles.label, {
+                    [styles.label_dark]: theme === "dark",
+                  })}
+                >
+                  {theme === "light" ? <CategoryIcon /> : <CategoryDarkIcon />}
                   {t("popup.labels.category")}
                 </span>
               }
-              className={styles.input}
+              className={cn(styles.input, {
+                [styles.input_dark]: theme === "dark"
+              })}
               name="category"
               labelPosition="top"
               variant="secondary"
@@ -135,14 +197,20 @@ export const Popup = ({ className, setVisible, ...props }) => {
               variant="secondary"
               color="orange"
               label={
-                <span className={styles.label}>
-                  <DescIcon />
+                <span
+                  className={cn(styles.label, {
+                    [styles.label_dark]: theme === "dark",
+                  })}
+                >
+                  {theme === "light" ? <DescIcon /> : <DescDarkIcon />}
                   {t("popup.labels.desc")}
                 </span>
               }
               name="desc"
               placeholder={t("popup.placeholders.desc")}
-              className={styles.textarea}
+              className={cn(styles.textarea, {
+                [styles.textarea_dark]: theme === "dark"
+              })}
             />
             {middlewares.map(({ name, placeholder }, index) => (
               <Form.Input
@@ -151,26 +219,41 @@ export const Popup = ({ className, setVisible, ...props }) => {
                 color="orange"
                 label={
                   index === 0 && (
-                    <span className={styles.label}>
-                      <MiddlewareIcon />
+                    <span
+                      className={cn(styles.label, {
+                        [styles.label_dark]: theme === "dark",
+                      })}
+                    >
+                      {theme === "light" ? (
+                        <MiddlewareIcon />
+                      ) : (
+                        <MiddlewareDarkIcon />
+                      )}
                       {t("popup.labels.middleware")}
                     </span>
                   )
                 }
                 name={name}
                 placeholder={placeholder}
-                className={styles.input}
+                className={cn(styles.input, {
+                  [styles.input_dark]: theme === "dark"
+                })}
                 key={name}
               />
             ))}
-            <Button onClick={addMiddlewarePlan} type="button" classNames={[styles.addMiddlewareButton]}>
-              <PlusIcon />
+            <Button
+              onClick={addMiddlewarePlan}
+              type="button"
+              classNames={[styles.addMiddlewareButton, theme === 'dark' && styles.addMiddlewareButton_dark]}
+            >
+              {theme === 'light' ? <PlusIcon /> : <PlusDarkIcon />}
             </Button>
-            <Button type="submit" classNames={[styles.createButton]}>
-              <span className={styles.create}>{t("popup.buttons.create")}</span> <PlusIcon />
+            <Button type="submit" classNames={[styles.createButton, theme === 'dark' && styles.createButton_dark]}>
+              <span className={styles.create}>{t("popup.buttons.create")}</span>{" "}
+              {theme === 'light' ? <PlusIcon /> : <PlusDarkIcon />}
             </Button>
           </Form>
-          <Illustration className={styles.illustration} />
+          {illustration}
         </div>
       </section>
     </Modal>

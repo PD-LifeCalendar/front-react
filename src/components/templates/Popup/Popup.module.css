@@ -14,7 +14,7 @@
 .popup {
   margin: 0 auto;
   width: fit-content;
-  background: #fff;
+  background: var(--mainFontColor);
   border-radius: 20px;
   padding: 48px;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
@@ -39,6 +39,11 @@
   font-size: 2.25rem;
   line-height: 2.5rem;
   text-transform: uppercase;
+  color: #000;
+}
+
+.title_dark {
+  color: #fff;
 }
 
 .crossIcon {
@@ -46,6 +51,7 @@
 }
 
 .form {
+  grid-area: form;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -56,9 +62,24 @@
   margin-top: 7px;
 }
 
+.input_dark, .input_dark:focus {
+  color: #E0E0E0;
+  border-color: #A6BCD2;
+}
+
+select.input_dark option {
+  background: #000;
+  color: #fff;
+}
+
 .textarea {
   width: 100%;
   border: 2px solid #FFE0B2; 
+}
+
+.textarea_dark, .textarea_dark:focus {
+  border-color: #A6BCD2;
+  color: #E0E0E0;
 }
 
 .label {
@@ -67,6 +88,11 @@
   align-items: center;
   gap: 10px;
   font-size: 1.125rem;
+  color: #000;
+}
+
+.label_dark {
+  color: #fff;
 }
 
 .createButton {
@@ -77,8 +103,36 @@
   gap: 10px;
 }
 
+.createButton_dark {
+  background: #27496C !important;
+  color: #fff;
+}
+
+.addMiddlewareButton_dark {
+  background: #6E8FB0 !important;
+  color: #fff;
+}
+
 .create {
   font-weight: 500;
   font-size: 2.25rem;
   line-height: 3rem;
+}
+
+.illustration {
+  grid-area: illustration;
+  width: 90%;
+}
+
+@media (max-width: 600px) {
+  .content {
+    grid-template-areas: 'illustration'
+                          'form';
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .illustration {
+    justify-self: center;
+  }
 }
