@@ -60,3 +60,26 @@
     display: contents;
   }
 }
+
+@media (max-width: 400px){
+
+  .graphicContainer {
+    flex-direction: column-reverse;
+  }
+
+  .title {
+    display:flex;
+  }
+
+  .graphic{
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .graphicContainer{
+    gap: 29px;
+    width: 450px;
+  }
+
+}

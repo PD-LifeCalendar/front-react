@@ -43,7 +43,7 @@ export const AccountForm = ({ mode, className, isAdmin }) => {
       >
         <div className={classes.wrapper}>
           <div>
-            <figure>
+            <figure className={classes.figuremobile}>
               <img
                 src="http://cdn.onlinewebfonts.com/svg/img_235552.png"
                 alt="photo"

@@ -90,4 +90,8 @@
     .wrapper {
         background: none;
     }
+
+    .title{
+        visibility: hidden;
+    }
 }
