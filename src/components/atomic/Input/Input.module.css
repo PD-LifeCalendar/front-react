@@ -33,11 +33,11 @@
 }
 
 .color_orange {
-  border-color: #ffe0b2;
+  border: 1px solid #ffe0b2;
 }
 
 .color_dark {
-  border-color: #424242c2;
+  border: 1px solid #424242c2;
 }
 
 .color_dark::placeholder {

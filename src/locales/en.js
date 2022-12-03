@@ -218,4 +218,7 @@ export default {
     whoAreYou: "Who are you",
     buttonText: "Add information",
   },
+  popup: {
+    
+  }
 };
