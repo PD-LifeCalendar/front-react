@@ -52,3 +52,48 @@
     font-size: 36px;
     margin-top: 14px;
 }
+
+@media (max-width: 750px){
+    .achievements .topPanel{
+        gap: 55px;
+    }
+
+    .achievements {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .achievements .age {
+        width: 459px;
+    }
+
+    .achievements li {
+        font-size: 24px;
+    }
+
+    .achievements ul{
+        width: 50%;
+    }
+}
+
+@media (max-width: 420px){
+    .achievements li {
+        font-size: 16px;
+    }
+
+    .achievements .age {
+        width: 207px;
+        font-size: 18px;
+    }
+
+    .achievements ul{
+        margin-left: 30px;
+        width: 35%;
+    }
+
+    .achievements .topPanel{
+        gap: 17px;
+    }
+    
+
+}

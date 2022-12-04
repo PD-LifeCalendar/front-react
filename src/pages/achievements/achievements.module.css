@@ -33,3 +33,65 @@
 .ageAchievements {
     margin-top: 75px;
 }
+
+@media(max-width:750px){
+
+    .achievements {
+        margin: 0 168px 0 46px;
+        margin-top: 100px;
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: stretch;
+        align-items: flex-start;
+    }
+
+    .topPanel{
+        flex-direction: column;
+        gap:38px;
+        align-items: flex-start;
+    }
+
+    .topPanel h2{
+        font-size: 32px;
+    }
+
+    .topPanel .buttons {
+        gap: 146px;
+        height: 60px;
+    }
+
+    .buttons span{
+        font-size: 22px;
+    }
+
+    .buttons img{
+        width: 18px;
+        height: 18px;
+    }
+
+    .topPanel h2{
+        margin-left: 180px;
+    }
+
+}
+
+@media(max-width:420px){
+    .topPanel h2{
+        font-size: 22px;
+    }
+
+    .topPanel .buttons {
+        gap: 91px;
+        height: 46px;
+    }
+
+    .topPanel h2{
+        margin-left: 90px;
+    }
+
+   .newTask{
+    display: none;
+   }
+}
