@@ -23,7 +23,6 @@ export const Login = () => {
   const [illustration, setIllustration] = useState(getIllustration());
 
   useEffect(() => {
-    console.log(theme)
     setIllustration(getIllustration());
   }, [theme, getIllustration]);
 
