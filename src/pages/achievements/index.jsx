@@ -57,7 +57,7 @@ export const Achievements = () => {
             <img src={sortFromA} alt="" width="32" />
           </Button>
           <Button onClick={() => setIsPopupVisible(true)}>
-            <span>Новая цель</span>
+            <span className={classes.newTask}>Новая цель</span>
             <img src={newOne} alt="" width="32" />
           </Button>
         </div>
