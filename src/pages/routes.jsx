@@ -1,7 +1,7 @@
 import React, { createContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useRoutes } from "react-router-dom";
-import { useTheme } from "../hooks/useTheme"; 
+import { useTheme } from "../hooks/useTheme";
 // import { useTheme } from "../hooks/useTheme";
 
 import { Mytasks } from "./Mytasks";
@@ -16,6 +16,7 @@ import { CalendarPage } from "./calendar";
 import { About } from "./about";
 import { Users } from "./users";
 import { MyAccount } from "./myacc";
+import { Goals } from "./goals";
 
 import Calendar from "../components/CalendarDark/Calendar";
 
@@ -80,6 +81,10 @@ const routes = [
   {
     path: "/mytasks",
     element: <Mytasks />,
+  },
+  {
+    path: "/goals",
+    element: <Goals />,
   },
 ];
 
