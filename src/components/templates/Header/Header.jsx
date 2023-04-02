@@ -38,7 +38,7 @@ export const Header = ({ className, variant, ...props }) => {
   }, []);
 
   return (
-    <div
+    <header
       className={cn(className, styles.header, styles[`${variant}`])}
       {...props}
     >
@@ -97,7 +97,7 @@ export const Header = ({ className, variant, ...props }) => {
           </button>
         </div>
       )}
-    </div>
+    </header>
   );
 };
 Header.propTypes = {

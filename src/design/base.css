@@ -13,12 +13,6 @@
   font-family: "Nunito";
 }
 
-#modal {
-  min-height: 100vh;
-  width: 100%;
-  font-family: "Nunito";
-}
-
 .themeSvg path {
   stroke: var(--contrastOrPrimary);
 }
