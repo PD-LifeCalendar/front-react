@@ -9,9 +9,7 @@ export const AdminPage = ({
     children, title = null, disablePadding = false, mainClassName,
 }) => (
     <div className={classes.wrapper}>
-        <header className={classes.header}>
-            <Header />
-        </header>
+        <Header className={classes.header} />
         <aside className={classes.sidebar}>
             <Sidebar />
         </aside>
@@ -22,9 +20,7 @@ export const AdminPage = ({
             {title && <h1 className={classes.title}>{title}</h1>}
             {children}
         </main>
-        <footer className={classes.footer}>
-            <Footer />
-        </footer>
+        <Footer className={classes.footer} />
     </div>
 );
 

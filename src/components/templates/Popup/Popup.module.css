@@ -1,16 +1,3 @@
-.background {
-  height: 100%;
-  width: 100%;
-  overflow-y: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 3;
-  background: rgba(255, 255, 255, 0.28);
-  backdrop-filter: blur(4.7px);
-  padding: 50px;
-}
-
 .popup {
   margin: 0 auto;
   width: fit-content;

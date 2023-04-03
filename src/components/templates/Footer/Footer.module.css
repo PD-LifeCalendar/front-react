@@ -1,13 +1,13 @@
 .container {
     max-width: 1000px;
     width: 90%;
-    padding-bottom: 100px;
     margin: 0 auto;
+    padding: 20px;
 }
 .footer__links {
     display: flex;
     flex-direction: row;
-    margin-bottom: 95px;
+    margin-bottom: 50px;
 }
 .footer ul {
     display: flex;
