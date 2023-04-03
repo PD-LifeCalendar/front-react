@@ -75,7 +75,7 @@ export const Achievements = () => {
           )
         )}
       </div>
-      {isPopupVisible ? <Popup setVisible={setIsPopupVisible} /> : null}
+      <Popup isVisible={isPopupVisible} setIsVisible={setIsPopupVisible} />
     </div>
   );
 };

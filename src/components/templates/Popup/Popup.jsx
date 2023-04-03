@@ -26,7 +26,7 @@ import { declOfNum } from "./helper/declToNum";
 import Button from "../../atomic/Button/Button";
 import { ThemeContext } from "./../../../pages/context";
 
-export const Popup = ({ className, setVisible, ...props }) => {
+export const Popup = ({ className, isVisible, setIsVisible, ...props }) => {
   const { t } = useTranslation();
   const { theme } = useContext(ThemeContext);
 
@@ -101,14 +101,15 @@ export const Popup = ({ className, setVisible, ...props }) => {
 
   const clickOutside = (e) => {
     if (e.target === e.currentTarget) {
-      setVisible(false);
+      setIsVisible(false);
     }
   };
 
   return (
     <Modal
       onClick={(e) => clickOutside(e)}
-      className={cn(styles.background, className)}
+      className={className}
+      isVisible={isVisible}
       {...props}
     >
       <section className={styles.popup}>
@@ -120,15 +121,16 @@ export const Popup = ({ className, setVisible, ...props }) => {
           >
             {t("popup.title")}:
           </h2>
+          {/* !TODO */}
           {theme === "light" ? (
             <CrossIcon
               className={styles.crossIcon}
-              onClick={() => setVisible(false)}
+              onClick={() => setIsVisible(false)}
             />
           ) : (
             <CrossDarkIcon
               className={styles.crossIcon}
-              onClick={() => setVisible(false)}
+              onClick={() => setIsVisible(false)}
             />
           )}
         </div>
