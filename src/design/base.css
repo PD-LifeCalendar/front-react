@@ -13,6 +13,15 @@
   font-family: "Nunito";
 }
 
+#modal {
+  min-height: 100vh;
+  width: 100%;
+  font-family: "Nunito";
+
+  /* NOTE(AlexZhaba:) Хз кто делал, но модалки щас руинят лейаут */
+  display: none;
+}
+
 .themeSvg path {
   stroke: var(--contrastOrPrimary);
 }

@@ -5,14 +5,14 @@
     position: relative;
 }
 
-button {
+.button {
     border: none;
     background: none;
     cursor: pointer;
     padding: 3px 15px;
 }
 
-button:hover {
+.button:hover {
     background: var(--buttonBgColor);
 }
 
