@@ -1,97 +1,94 @@
 .achievements {
-    margin: 0 168px 0 168px;
-    margin-top: 100px;  
-    color: var(--primaryFontColor);
+  margin: 100px 168px 70px 168px;
+  color: var(--primaryFontColor);
 }
 
 * {
-    font-family: 'Nunito';
+  font-family: "Nunito";
 }
 
 .topPanel {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 77px;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 77px;
+  align-items: center;
 }
 
 .topPanel h2 {
-    font-family: 'Comfortaa', cursive;
-    font-weight: 300;
-    font-size: 64px;
-    width: fit-content;
+  font-family: "Comfortaa", cursive;
+  font-weight: 300;
+  font-size: 64px;
+  width: fit-content;
 }
 
 .topPanel .buttons {
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
 }
 
 .ageAchievements {
-    margin-top: 75px;
+  margin-top: 75px;
 }
 
-@media(max-width:750px){
+@media (max-width: 750px) {
+  .achievements {
+    margin: 0 168px 0 46px;
+    margin-top: 100px;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: flex-start;
+  }
 
-    .achievements {
-        margin: 0 168px 0 46px;
-        margin-top: 100px;
-        display: flex;
-        position: relative;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: stretch;
-        align-items: flex-start;
-    }
+  .topPanel {
+    flex-direction: column;
+    gap: 38px;
+    align-items: flex-start;
+  }
 
-    .topPanel{
-        flex-direction: column;
-        gap:38px;
-        align-items: flex-start;
-    }
+  .topPanel h2 {
+    font-size: 32px;
+  }
 
-    .topPanel h2{
-        font-size: 32px;
-    }
+  .topPanel .buttons {
+    gap: 146px;
+    height: 60px;
+  }
 
-    .topPanel .buttons {
-        gap: 146px;
-        height: 60px;
-    }
+  .buttons span {
+    font-size: 22px;
+  }
 
-    .buttons span{
-        font-size: 22px;
-    }
+  .buttons img {
+    width: 18px;
+    height: 18px;
+  }
 
-    .buttons img{
-        width: 18px;
-        height: 18px;
-    }
-
-    .topPanel h2{
-        margin-left: 180px;
-    }
-
+  .topPanel h2 {
+    margin-left: 180px;
+  }
 }
 
-@media(max-width:420px){
-    .topPanel h2{
-        font-size: 22px;
-    }
+@media (max-width: 420px) {
+  .topPanel h2 {
+    font-size: 22px;
+  }
 
-    .topPanel .buttons {
-        gap: 91px;
-        height: 46px;
-    }
+  .topPanel .buttons {
+    gap: 91px;
+    height: 46px;
+  }
 
-    .topPanel h2{
-        margin-left: 90px;
-    }
+  .topPanel h2 {
+    margin-left: 90px;
+  }
 
-   .newTask{
+  .newTask {
     display: none;
-   }
+  }
 }
