@@ -1,11 +1,11 @@
 import React from 'react';
+import cn from 'classnames';
 import { Link } from 'react-router-dom';
-import LogoIcon from './assets/logo.svg';
 
 import styles from './Footer.module.css';
 
-export const Footer = () => (
-    <footer className={styles.footer}>
+export const Footer = ({ className, ...props }) => (
+    <footer className={cn(styles.footer, className)} {...props}>
         <div className={styles.container}>
             <div className={styles.footer__links}>
                 <img className={styles.img} width={112} height={112} src="images/logo.svg" alt="Logo" />

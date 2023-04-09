@@ -262,7 +262,12 @@
   justify-content: center;
 }
 .interface__img-wrap img {
-  max-width: 600px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.phones {
+  max-width: 600px !important;
   width: 100%;
 }
 .interface__img + .interface__img {

@@ -39,6 +39,8 @@
   --contrastColorShade1: #424242;
   --contrastColorShade2: #0a0a0a;
   --contrastColorShade3: #c2c2c2;
+
+  --containerMaxWidth: 1740px;
 }
 
 #root[data-theme="dark"] {

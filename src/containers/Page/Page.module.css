@@ -8,21 +8,21 @@
 }
 
 .header {
-  background: var(--secondaryOrContrastShade2);
+  background: var(--pageBgColor);
   color: var(--contrastOrPrimary);
 }
 
 .sidebar {
-  background: var(--secondaryOrContrastShade2);
+  background: var(--pageBgColor);
   color: var(--contrastOrPrimary);
 }
 
 .footer {
-  background: var(--secondaryOrContrastShade2);
+  background: var(--pageBgColor);
   color: var(--contrastOrPrimary);
 }
 
 .main {
-  background: var(--secondaryOrContrastShade2);
+  background: var(--pageBgColor);
   color: var(--contrastOrPrimary);
 }

@@ -16,6 +16,9 @@
 #modal {
   width: 100%;
   font-family: "Nunito";
+
+  /* NOTE(AlexZhaba:) Хз кто делал, но модалки щас руинят лейаут */
+  display: none;
 }
 
 .themeSvg path {

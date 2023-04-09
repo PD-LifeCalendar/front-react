@@ -1,5 +1,8 @@
 .header {
-  box-shadow: 0px 4px 50px rgba(125, 5, 5, 0.13);
+    height: 104px;
+    box-shadow: 0px 4px 50px rgba(125, 5, 5, 0.13);
+    background: var(--secondaryOrContrastShade1);
+    color: var(--contrastOrPrimary);
 }
 
 .header.secondary {
@@ -7,7 +10,7 @@
 }
 
 .container {
-  max-width: 1740px;
+  max-width: var(--containerMaxWidth);
   width: 90%;
   margin: 0 auto;
   display: flex;

@@ -1,0 +1,82 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 80px;
+}
+
+.container {
+  font-size: 16px;
+  border: 3px solid transparent;
+  border-radius: 8px;
+}
+
+.containerOpen {
+  border: 3px solid #FFE0B2;
+} 
+
+.title {
+  border-radius: 8px;
+  background: var(--themeBtnBgColor);
+  height: 100%;
+  
+  border: none;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+
+  padding: 15px 38px;
+  flex: 1;
+
+  font-size: 2.25rem;
+}
+
+.controlGroup {
+  padding: 0 40px 0 20px;
+  
+  display: flex;
+  gap: 70px;
+}
+
+.list {
+  list-style: inside;
+
+  padding: 19px 38px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+.goalContainer {
+  position: relative;
+  font-size: 1.75rem;
+
+  /* list-style: inside; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-left: 20px;
+}
+
+.goalContainer::before {
+  content: '';
+
+  position: absolute;
+  left: -25px;
+
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
+  background: var(--contrastOrPrimary);
+}
