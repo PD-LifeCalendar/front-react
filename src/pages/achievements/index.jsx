@@ -5,10 +5,10 @@ import classes from "./achievements.module.css";
 import sortFromA from "./sortFromA.svg";
 import newOne from "./newOne.svg";
 
-import { Footer, Header } from "../../components/templates";
 import { Button } from "../../containers/Button/Button";
 import { AgeAchievements } from "../../components/AgeAchievements/AgeAchievements";
 import { Popup } from "../../components/templates/Popup/Popup";
+import { Page } from "../../containers";
 
 const ageAchievements = [
   {
@@ -47,8 +47,7 @@ export const Achievements = () => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   return (
-    <>
-      <Header />
+    <Page>
       <div className={classes.achievements}>
         <div className={classes.topPanel}>
           <h2>Мои достижения</h2>
@@ -98,7 +97,6 @@ export const Achievements = () => {
         </div>
         {isPopupVisible ? <Popup setVisible={setIsPopupVisible} /> : null}
       </div>
-      <Footer />
-    </>
+    </Page>
   );
 };
