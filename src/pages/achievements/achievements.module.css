@@ -28,6 +28,10 @@
   flex-direction: row;
   gap: 24px;
 }
+.buttons button:last-of-type {
+  border: none;
+  background-color: inherit;
+}
 
 .ageAchievements {
   margin-top: 75px;
