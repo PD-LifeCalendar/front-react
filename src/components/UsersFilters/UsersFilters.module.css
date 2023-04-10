@@ -1,36 +1,9 @@
 .form {
   display: flex;
-
+  justify-content: space-around;
   gap: 40px;
-}
-.formItem {
-  flex-grow: 1;
 }
 
 .formInput {
   width: 100%;
-}
-
-.userId {
-  flex-basis: 97px;
-}
-
-.email {
-  flex-basis: 255px;
-}
-
-.lastName {
-  flex-basis: 287px;
-}
-.name {
-  flex-basis: 235px;
-}
-
-.id {
-  flex-basis: 20px;
-}
-
-.dateRegist,
-.date {
-  flex-basis: 180px;
 }
