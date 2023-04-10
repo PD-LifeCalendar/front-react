@@ -28,7 +28,7 @@ import { useEffect } from "react";
 const routes = [
   {
     path: "/",
-    element: <Main />,
+    element: <Calendar />,
   },
   {
     path: "/dashboard",

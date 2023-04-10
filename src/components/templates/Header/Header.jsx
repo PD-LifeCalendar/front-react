@@ -48,22 +48,22 @@ export const Header = ({ className, variant, ...props }) => {
           <nav className={styles.navigation}>
             <ul className={styles.list}>
               <li className={styles.item}>
-                <Link className={styles.link} to="/">
+                <Link className={styles.link} to="/main">
                   {t("headers.main")}
                 </Link>
               </li>
               <li className={styles.item}>
-                <Link className={styles.link} to="/">
+                <Link className={styles.link} to="/dashboard">
                   {t("headers.appName")}
                 </Link>
               </li>
               <li className={styles.item}>
-                <Link className={styles.link} to="/">
+                <Link className={styles.link} to="/goals">
                   {t("headers.goal")}
                 </Link>
               </li>
               <li className={styles.item}>
-                <Link className={styles.link} to="/">
+                <Link className={styles.link} to="/achievements">
                   {t("headers.achievements")}
                 </Link>
               </li>
@@ -73,7 +73,7 @@ export const Header = ({ className, variant, ...props }) => {
                 </Link>
               </li>
               <li className={styles.item}>
-                <Link className={styles.link} to="/">
+                <Link className={styles.link} to="/account">
                   {t("headers.profile")}
                   <img src={OutIcon} alt="вход" />
                 </Link>
