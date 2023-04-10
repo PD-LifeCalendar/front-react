@@ -10,15 +10,15 @@ import mobile from "./mobile.png";
 import people from "./people.png";
 import business from "./business.png";
 import group from "./group.png";
-import lightMac from './mac-ligth.png'
-import lightPhone from './phone-light.png'
-import darkMac from './mac-dark.png'
-import darkPhone from './phone-dark.png'
-import lightPhones from './phones-light.png'
+import lightMac from "./mac-ligth.png";
+import lightPhone from "./phone-light.png";
+import darkMac from "./mac-dark.png";
+import darkPhone from "./phone-dark.png";
+import lightPhones from "./phones-light.png";
 import useSwitcher from "./hooks/useSwitcher";
 import { useTheme } from "../../hooks/useTheme";
 import { LangButton } from "../atomic";
-import cn from 'classnames'
+import cn from "classnames";
 
 const Calendar = () => {
   const { t } = useTranslation();
@@ -98,19 +98,21 @@ const Calendar = () => {
                     }`}
                   >
                     <li>
-                      <a href="#">{t("main.header.main")}</a>
+                      <a href="/main">{t("main.header.main")}</a>
                     </li>
                     <li>
-                      <a href="#">{t("main.header.productName")}</a>
+                      <a href="/dashboard">{t("main.header.productName")}</a>
                     </li>
                     <li>
                       <a href="#">{t("main.header.diary")}</a>
                     </li>
                     <li>
-                      <a href="#">{t("main.header.goals")}</a>
+                      <a href="/goals">{t("main.header.goals")}</a>
                     </li>
                     <li>
-                      <a href="#">{t("main.header.archivements")}</a>
+                      <a href="/archivements">
+                        {t("main.header.archivements")}
+                      </a>
                     </li>
                   </ul>
                 )}
@@ -466,13 +468,13 @@ const Calendar = () => {
               </div>
               <div className={classes.main__images}>
                 <img
-                  src={theme === 'light' ? lightMac : darkMac}
+                  src={theme === "light" ? lightMac : darkMac}
                   alt="macbook"
                   width={769}
                   height={456.16}
                 />
                 <img
-                  src={theme === 'light' ? lightPhone : darkPhone}
+                  src={theme === "light" ? lightPhone : darkPhone}
                   alt="macbook"
                   width={175.05}
                   height={355.98}
@@ -511,12 +513,20 @@ const Calendar = () => {
             </button>
           </div>
           <div className={classes["interface__img-wrap"]}>
-            <img  
+            <img
               className={cn({
                 [classes.interface__img]: true,
-                [classes.phones]: gadgetState[1]
+                [classes.phones]: gadgetState[1],
               })}
-              src={gadgetState[0] ? (theme === 'light' ? lightMac : darkMac) : (theme === 'light' ? lightPhones : mobile)}
+              src={
+                gadgetState[0]
+                  ? theme === "light"
+                    ? lightMac
+                    : darkMac
+                  : theme === "light"
+                  ? lightPhones
+                  : mobile
+              }
               alt="Macbook"
             />
           </div>
