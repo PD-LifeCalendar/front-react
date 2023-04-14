@@ -17,11 +17,9 @@ export const Users = () => {
           {t("users.filter")}
         </Button>
       </div>
-      <div>
-        <UsersFilters />
-      </div>
+      <UsersFilters className={styles.usersFilters} />
       <div className={styles.userList}>
-        <UsersList />
+        <UsersList itemClassName={styles.userItem} />
       </div>
     </AdminPage>
   );

@@ -1,16 +1,18 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import cn from 'classnames';
 
 import { Card } from "../../containers";
 import { Form } from "../Form/Form";
 import styles from "./UsersFilters.module.css";
 import classNames from "classnames";
 
-const UsersFilters = () => {
+const UsersFilters = ({ className, ...props }) => {
   const { t } = useTranslation();
+
   return (
-    <Card>
-      <Form className={styles.form}>
+    <Card {...props}>
+      <Form className={cn(styles.form, className)}>
         <Form.Input
           name="id"
           label={`${t("users.table.id")}:`}

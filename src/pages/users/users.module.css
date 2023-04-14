@@ -14,3 +14,10 @@
   font-size: 24px;
   line-height: 33px;
 }
+
+@media (max-width: 740px) {
+  .usersFilters {
+    display: flex;
+    flex-direction: column;
+  }
+}

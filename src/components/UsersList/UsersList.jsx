@@ -1,4 +1,6 @@
 import React from "react";
+import cn from "classnames";
+
 import { Card } from "../../containers/Card/Card";
 import styles from "./UsersList.module.css";
 import UserListItem from "../UserListItem/UserListItem";
@@ -78,9 +80,9 @@ const items = [
   },
 ];
 
-const UsersList = () => {
+const UsersList = ({ itemClassName, ...props }) => {
   return (
-    <Card>
+    <Card {...props}>
       <div className={styles.usersList}>
         {items.map(
           ({ id, lastName, name, email, birthday, dateOfRegistration }) => (

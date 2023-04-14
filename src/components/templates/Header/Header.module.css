@@ -60,6 +60,8 @@
 }
 
 .moreButton {
+  border: none;
+  background: none;
   margin-left: 7%;
 }
 
