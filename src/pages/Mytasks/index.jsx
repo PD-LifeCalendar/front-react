@@ -1,5 +1,6 @@
 // import React from 'react';
 import React, { useEffect, useState, useCallback } from "react";
+import { Link } from "react-router-dom";
 
 
 import './mytasks.css';
@@ -55,10 +56,12 @@ export const Mytasks = () => (
                                 <span>Фильтр</span>
                                 <img src={icon_down} alt="" width="32" />
                             </Button>
-                            <Button>
-                                    <span>Новая цель</span>
-                                    <img src={newOne} alt="" width="32" />
-                            </Button>
+                            <Link to={'/newtask'}>
+                                <Button>
+                                        <span>Новая цель</span>
+                                        <img src={newOne} alt="" width="32" />
+                                </Button>
+                            </Link>
                             <p className="search"><a href="#"><img  src={search} alt="" /></a></p>
                     </div>
                 </div>
