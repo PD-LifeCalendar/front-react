@@ -80,24 +80,28 @@ const items = [
   },
 ];
 
-const UsersList = ({ itemClassName, ...props }) => {
+const UsersList = ({ itemClassName, data, ...props }) => {
   return (
     <Card {...props}>
       <div className={styles.usersList}>
-        {items.map(
-          ({ id, lastName, name, email, birthday, dateOfRegistration }) => (
+        {data.map(
+          ({ id, name, email, birthdate, dateOfRegistration }) => {
+            const [firstName, lastName] = name.split(' ');
+
+            return (
+            
             <UserListItem
               className={styles.listItem}
               items={[
                 { value: id, width: 97 },
                 { value: lastName, width: 287 },
-                { value: name, width: 235 },
+                { value: firstName, width: 235 },
                 { value: email, width: 255 },
-                { value: birthday, width: 180 },
+                { value: birthdate, width: 180 },
                 { value: dateOfRegistration, width: 180 },
               ]}
             />
-          )
+          )}
         )}
       </div>
     </Card>

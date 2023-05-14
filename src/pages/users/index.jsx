@@ -6,9 +6,13 @@ import UsersFilters from "../../components/UsersFilters/UsersFilters";
 import UsersList from "../../components/UsersList/UsersList";
 import styles from "./users.module.css";
 import Button from "../../components/atomic/Button/Button";
+import { useGetUsers } from "../../hooks/useGetUsers";
 
 export const Users = () => {
   const { t } = useTranslation();
+  const {data} = useGetUsers();
+  console.log(data);
+
   return (
     <AdminPage>
       <div className={styles.header}>
@@ -19,7 +23,7 @@ export const Users = () => {
       </div>
       <UsersFilters className={styles.usersFilters} />
       <div className={styles.userList}>
-        <UsersList itemClassName={styles.userItem} />
+        <UsersList itemClassName={styles.userItem} data={data?.content || []}/>
       </div>
     </AdminPage>
   );

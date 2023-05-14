@@ -9,12 +9,15 @@ import { ReactComponent as Illustration } from "../../static/images/Illustation.
 import { ReactComponent as IllustrationDark } from "../../static/images/Illustration-dark.svg";
 import { ReactComponent as LockIcon } from "../../static/images/lock.svg";
 import { useTheme } from './../../hooks/useTheme';
+import { apiInstance as AuthApi } from "../../api/auth";
+import { useLogin } from "../../hooks/useLogin";
 
 import styles from "./login.module.css";
 
 export const Login = () => {
   const { t } = useTranslation();
   const { theme } = useContext(ThemeContext);
+  const {mutate} = useLogin();
 
   const getIllustration = useCallback(() => {
     return theme === 'light' ? <Illustration className={styles.illustration} /> : <IllustrationDark className={styles.illustration} />;
@@ -26,8 +29,8 @@ export const Login = () => {
     setIllustration(getIllustration());
   }, [theme, getIllustration]);
 
-  const onSubmit = () => {
-    // console.log(125);
+  const onSubmit = (values) => {
+    mutate(values);
   };
 
   return (
@@ -45,7 +48,7 @@ export const Login = () => {
                   <LockIcon className={'themeSvg'} />{t('auth.loginLabel')}
                 </span>
               }
-              name="login"
+              name="email"
               className={styles.input}
             />
             <Form.Input
