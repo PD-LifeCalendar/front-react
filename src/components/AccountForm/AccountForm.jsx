@@ -13,7 +13,7 @@ import { accountForm } from "../../mock/account";
 import classes from "./AccountForm.module.css";
 import { useState } from "react";
 
-export const AccountForm = ({ mode, className, isAdmin }) => {
+export const AccountForm = ({ mode, className, isAdmin, userInfo}) => {
   const { t } = useTranslation();
   const [formValue, setFormValue] = useState(null);
 
@@ -28,8 +28,16 @@ export const AccountForm = ({ mode, className, isAdmin }) => {
 
   useEffect(() => {
     if (!formRef.current?.setValue) return;
-    formRef.current.setValue(accountForm.isAdmin);
-  }, [formRef]);
+
+    if (userInfo) {
+      formRef.current.setValue({
+        ...userInfo,
+        firstName: userInfo.name.split(' ')[0],
+        surname: userInfo.name.split(' ')[1],
+      });
+    }
+    
+  }, [formRef, userInfo]);
 
   const { firstName } = formValue ?? {};
 
@@ -63,11 +71,11 @@ export const AccountForm = ({ mode, className, isAdmin }) => {
               name="sex"
               data={[
                 {
-                  value: "woman",
+                  value: "FEMALE",
                   content: "Женский",
                 },
                 {
-                  value: "man",
+                  value: "MALE",
                   content: "Мужской",
                 },
               ]}
@@ -86,7 +94,7 @@ export const AccountForm = ({ mode, className, isAdmin }) => {
           <div className={classes.list}>
             <Form.Textarea
               label={t("adminAcc.form.about")}
-              name="about"
+              name="description"
               containerClass={classes.textarea}
               placeholder="Расскажите о себе"
             />

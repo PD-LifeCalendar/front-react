@@ -1,4 +1,4 @@
-import React, { createContext, useMemo } from "react";
+import React, { createContext, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useRoutes } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
@@ -18,12 +18,15 @@ import { Users } from "./users";
 import { MyAccount } from "./myacc";
 import { Goals } from "./goals";
 
+import { useRefresh } from "../hooks/useRefresh";
 import Calendar from "../components/CalendarDark/Calendar";
 
 import { ThemeContext } from "./context";
 import { storage } from "../classes/Storage";
 import { Lang } from "../components/atomic/LangButton/constants";
 import { useEffect } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
+import Verification from "./verification";
 
 const routes = [
   {
@@ -86,11 +89,20 @@ const routes = [
     path: "/goals",
     element: <Goals />,
   },
+  {
+    path: "/verification/:verification_token",
+    element: <Verification />,
+  },
 ];
 
 export const AppRouter = () => {
   const { theme, setTheme } = useTheme();
   const { i18n } = useTranslation();
+  const {mutate: refresh, isLoading, status} = useRefresh();
+
+  useEffect(() => {
+    refresh();
+  }, []);
 
   useEffect(() => {
     i18n.changeLanguage(
@@ -107,6 +119,23 @@ export const AppRouter = () => {
     }),
     [setTheme, theme]
   );
+  console.log(isLoading, status);
+
+  if (isLoading || status === 'idle') {
+    return <ClipLoader
+      color='black'
+      loading
+      size={100}
+      cssOverride={{
+        display: "block",
+        position: 'absolute',
+        top: 'calc(50% - 50px)',
+        left: 'calc(50% - 50px)',
+      }}
+      aria-label="Loading Spinner"
+      data-testid="loader"
+    />;
+  }
 
   return (
     <ThemeContext.Provider value={themeContext}>
